@@ -1,9 +1,13 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
@@ -11,57 +15,157 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/bootstrap.css">
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.css">
+
+    <!-- endbuild -->
 </head>
-  <body ng-app="uiApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<body ng-app="uiApp">
 
-    <!--[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+<!-- Add your site or application content here -->
+<div class="outer-wrapper">
+    <div class="container" data-ng-controller="appMgrCtrl">
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <header id="main_header" class="main-header" role="banner">
+            <div class="masthead row-fluid">
+                <div class="span7">
+                    <img src="images/common/blank.gif" class="print-view-logo" alt="" data-ng-src="images/{{Service | lowercase}}/print-view-logo.png">
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+                    <h1 class="logo"><span class="ada-hide">Bank of America</span> Travel Center</h1>
+                </div>
 
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
+                <div class="span5">
+                    <ul class="header-links">
+                        <li data-ng-hide="profile"><a class="last" href="javascript:void(0)">bankofamerica.com</a></li>
+                        <li data-ng-show="profile"><a href="#">Rewards Home</a></li>
+                        <li data-ng-show="profile"><a data-dismiss="modal" href="javascript:void(0)">Contact Us</a> </li>
+                        <li data-ng-show="profile"><a data-dismiss="modal" href="javascript:void(0)">Help</a></li>
+                        <li data-ng-show="profile"><a href="#sign_out" role="button" id="sign_out_link" data-toggle="modal" class="sign-out">Sign Out</a></li>
+                    </ul>
 
-        <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
-        <!-- endbuild -->
+                    <div data-ng-show="profile" class="ng-cloak points-profile">
+                        <div class="points-summary-placeholder">
+                            <div>
+                                <span class="summary-label">Account Ending:</span>
+                                <span class="account-ending-last4" data-ng-bind-template="{{profile.accountNumber}}"></span>
+                                <br class="clear">
+                            </div>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
+                            <div>
+                                <span class="summary-label">Total Available Points:</span>
+                                <span class="account-points-available" data-ng-bind-template="{{profile.points | number}}"></span>
+                                <br class="clear">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav data-ng-show="true">
+                <ul data-ng-controller="navBarCtrl" class="main-nav">
+                    <li><a href="#/" data-ng-class="{active: selectedTab=='Home'}">Travel Overview</a></li>
+                    <li><a href="#/Flights" data-ng-class="{active: selectedTab=='Flights'}">Flights</a></li>
+                    <li><a href="#/Hotels" class="ng-cloak" data-ng-class="{active: selectedTab=='Hotels'}">Hotels</a>
+                    <li><a href="#/Cars" class="ng-cloak" data-ng-class="{active: selectedTab=='Cars'}">Cars</a></li>
+                    <li><a href="#/Account" data-ng-class="{active: selectedTab=='MyAccount'}">My Travel</a></li>
+                </ul>
+            </nav>
+            <h2 id="section_header" class="section-header" data-ng-controller="sectionHeaderCtrl">
+                <span data-ng-bind-template="{{sectionName}}">&nbsp;</span>
+            </h2>
+        </header>
+
+
+        <!-- Layout:Main Well:start -->
+        <div id="mainWell">
+            <div data-ng-view class="main-content"></div>
+        </div>
+        <!-- Layout:Main Well:end -->
+
+        <footer class="row-fluid main-footer" id="main_footer" role="contentinfo">
+            <div class="span12">
+                <div class="footer-links" data-ng-show="profile">
+                    <ul>
+                        <li class="first"><h4>Secure Area</h4></li>
+                        <li><a title="Contact us">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="help_footer">Help</a></li>
+                        <li><a title="Privacy &amp; Security" href="javascript:void(0)" target="_blank">Privacy &amp; Security</a></li>
+                        <li class="last" data-ng-show="profile"><a href="javascript:void(0)" role="button" id="sign_out_footer_link" data-toggle="modal">Sign Out</a></li>
+                        <li class="last debug-info" data-ng-show="profile" aria-hidden="true">
+                            JSessionId: <span data-ng-bind="jsessionId"></span>
+                            <span data-ng-show="pnrNumber"> , PNR:
+                                <span data-ng-bind="pnrNumber" id="pnr"></span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <p>
+                    <a data-ng-hide="profile" title="Privacy &amp; Security"
+                      href="https://www.bankofamerica.com/privacy/index.jsp" target="_blank">Privacy &amp; Security</a>
+                </p>
+
+
+                <p>test<a class="equal-housing-icon" title="Opens in new window"
+                          onclick="javascript:window.open(this.href,'newwin','width=640,height=371,scrollbars=yes,resizable=yes,left=35,top=161'); return false;"
+                          href="http://www.bankofamerica.com/help/equalhousing_popup.cfm"
+                          target="_blank">Equal Housing Lender</a><br/>
+                    <span class="copyright">&copy; testtest</span>
+                </p>
+            </div>
+        </footer>
+        <!-- Sign out -->
+        <div id="sign_out" class="modal hide" data-ng-include data-src="'views/popups/sign_out.html'"></div>
+
+        <!-- Speed bump -->
+        <div id="speed_bump" class="modal hide" data-ng-include
+             data-src="'views/'+ Service.toLowerCase() + '/speed_bump.html'"></div>
+    </div>
+</div>
+
+
+
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+
+<!-- build:js scripts/plugins.js -->
+<script src="bower_components/sass-bootstrap/js/affix.js"></script>
+<script src="bower_components/sass-bootstrap/js/alert.js"></script>
+<script src="bower_components/sass-bootstrap/js/button.js"></script>
+<script src="bower_components/sass-bootstrap/js/carousel.js"></script>
+<script src="bower_components/sass-bootstrap/js/transition.js"></script>
+<script src="bower_components/sass-bootstrap/js/collapse.js"></script>
+<script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
+<script src="bower_components/sass-bootstrap/js/modal.js"></script>
+<script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
+<script src="bower_components/sass-bootstrap/js/tab.js"></script>
+<script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
+<script src="bower_components/sass-bootstrap/js/popover.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/modules.js -->
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-ui/build/angular-ui.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/controllers/navBarCtrl.js"></script>
+<script src="scripts/controllers/appMgrCtrl.js"></script>
+<script src="scripts/controllers/sectionHeaderCtrl.js"></script>
+<script src="scripts/app-bootstrap.js"></script>
+<script src="scripts/app-routes.js"></script>
+<!-- endbuild -->
 </body>
 </html>

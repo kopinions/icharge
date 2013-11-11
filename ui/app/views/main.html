@@ -1,9 +1,43 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<div class="row-fluid">
+    <tabset>
+        <tab heading="Static title">Static content</tab>
+        <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
+            {{tab.content}}
+        </tab>
+        <tab select="alertMe()">
+            <tab-heading>
+                <i class="icon-bell"></i> Select me for alert!
+            </tab-heading>
+            I've got an HTML heading, and a select callback. Pretty cool!
+        </tab>
+    </tabset>
+    <div class="span3">
+        <ul class="nav navbar nav-list pull-left">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+                <a data-ng-click="toggletest=!toggletest" href="javascript:void(0)">toggle</a>
+                <ul class="nav nav-list"  data-ng-init="items=[1,2,3]">
+                    <li style="padding-left: 20px" class="collapse " ui-toggle="toggletest" data-ng-repeat="item in items" >
+                        <a href="javascript:void(0)">{{item}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+        <div class="span9">test</div>
 </div>
+
+
+
+<style>
+    .ui-show {
+        color: blue;
+        transition: all 0.5s ease; /* You should probably browser-prefix this */
+    }
+    .ui-hide {
+        opacity: 0;
+        transition: all 0.5s ease; /* You should probably browser-prefix this */
+    }
+</style>
