@@ -50,18 +50,16 @@
                     </ul>
 
                     <div data-ng-show="true" class="ng-cloak points-profile">
-                        <div class="points-summary-placeholder">
-                            <div>
-                                <span class="summary-label">Account Ending:</span>
-                                <span class="account-ending-last4" data-ng-bind-template="{{profile.accountNumber}}"></span>
-                                <br class="clear">
-                            </div>
+                        <div>
+                            <span class="summary-label">Account Ending:</span>
+                            <span class="account-ending-last4" data-ng-bind-template="{{profile.accountNumber}}"></span>
+                            <br class="clear">
+                        </div>
 
-                            <div>
-                                <span class="summary-label">Total Available Points:</span>
-                                <span class="account-points-available" data-ng-bind-template="{{profile.points | number}}"></span>
-                                <br class="clear">
-                            </div>
+                        <div>
+                            <span class="summary-label">Total Available Points:</span>
+                            <span class="account-points-available" data-ng-bind-template="{{profile.points | number}}"></span>
+                            <br class="clear">
                         </div>
                     </div>
                 </div>
@@ -88,15 +86,15 @@
         </div>
         <!-- Layout:Main Well:end -->
 
-        <footer class="row-fluid main-footer" id="main_footer" role="contentinfo">
-            <div class="span12 footer-links">
+        <footer class="row main-footer" id="main_footer" role="contentinfo">
+            <div class="col-md-12 footer-links">
                 <ul>
-                        <li class="first"><h4>Secure Area</h4></li>
-                        <li><a title="Contact us">Contact Us</a></li>
-                        <li><a href="javascript:void(0)" class="help_footer">Help</a></li>
-                        <li><a title="Privacy &amp; Security" href="javascript:void(0)" target="_blank">Privacy &amp; Security</a></li>
-                        <li class="last"><a href="javascript:void(0)" role="button" id="sign_out_footer_link" data-toggle="modal">Sign Out</a></li>
-                    </ul>
+                    <li class="first"><h4>Secure Area</h4></li>
+                    <li><a title="Contact us">Contact Us</a></li>
+                    <li><a href="javascript:void(0)" class="help_footer">Help</a></li>
+                    <li><a title="Privacy &amp; Security" href="javascript:void(0)" target="_blank">Privacy &amp; Security</a></li>
+                    <li class="last"><a href="javascript:void(0)" role="button" id="sign_out_footer_link" data-toggle="modal">Sign Out</a></li>
+                </ul>
             </div>
         </footer>
         <!-- Sign out -->

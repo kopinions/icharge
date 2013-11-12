@@ -17,14 +17,171 @@
     height: 114px;
     position: relative;
     overflow: hidden;
+    background-color: red;
 }
 
 .main-header ul.header-links {
     list-style: none;
     text-align: right;
+    font-size: 13px;
 }
 
 .main-header ul.header-links li {
     list-style: none;
     display: inline;
 }
+
+.main-header ul.header-links li a {
+    color: white;
+    background: url(../images/header-divider.png) 100% 0 no-repeat;
+    padding: 0 10px;
+}
+
+
+.main-header ul.header-links li a.sign-out {
+    font-weight: bold;
+    background: none;
+    padding-right: 0px;
+}
+
+.main-header .points-profile {
+    float: right;
+    margin: 20px, 18px, 0px, 0px;
+    width: 252px;
+    height: 49px;
+    background: url(../images/points-widget-bg.png) 100% 0 no-repeat;
+    line-height: 15px;
+    font-size: 13px;
+}
+
+.main-header .points-profile div {
+    clear: right;
+    margin-left: 10px;
+    height: 20px;
+}
+
+.main-header .points-profile div:first-child {
+    margin-top: 8px;
+}
+
+.main-header .account-ending-last4, .account-points-available {
+    float: right;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.main-header .summary-label {
+    float: left;
+}
+
+.main-header nav {
+    background-color: #D1CDC4;
+    height: 34px;
+    font-family: Arial;
+}
+
+.main-header nav ul.main-nav {
+    list-style: none;
+    height: 33px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #E5E2DA;
+}
+
+.main-header nav ul.main-nav li {
+    list-style: none;
+    background-color: #E5E2DA;
+    border-right: 1px solid #A2A2A2;
+    float: left;
+    width: auto;
+    height: 34px;
+}
+
+.main-header nav ul.main-nav li a {
+    display: inline-block;
+    padding: 0 18px;
+    text-decoration: none;
+    height: 33px;
+    line-height: 34px;
+    color: #433732;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #D1CDC4;
+    border-left: 1px solid #ffffff;
+}
+
+.main-header nav ul.main-nav li a:hover, a:active {
+    background-color: #f8f8ff;
+    border-right: 1px solid #f8f8ff;
+    border-bottom: 0px;
+    border-left: 1px solid #f8f8ff;
+    height: 34px;
+}
+
+.main-header nav ui.main-nav li:first-child a {
+    border-left: none;
+}
+
+footer.main-footer {
+    font-family: Arial;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 12px;
+    clear: both;
+}
+
+
+
+footer.main-footer .footer-links ul{
+    list-style: none;
+    margin: 0px;
+}
+
+footer.main-footer .footer-links{
+    border-top: 1px solid #c1bcae;
+    border-bottom: 1px solid #c1bcae;
+    padding: 10px 0;
+    margin-bottom: 17px;
+}
+
+footer.main-footer .footer-links ul li {
+    display: inline-block;
+    border-right: 1px solid #c1bcae;
+    margin: 0;
+    padding: 0;
+}
+
+footer.main-footer .footer-links ul li h4{
+    display: inline;
+    background: url(../images/icon_secured.png) 0 0 no-repeat;
+    padding-left: 20px;
+    color: #857363;
+    margin: 0 25px 0 15px;
+    line-height: 25px;
+}
+
+footer.main-footer .footer-links ul li.last{
+    border-right: none;
+}
+
+
+footer.main-footer .footer-links ul li a{
+    padding: 0px 10px;
+}
+
+
+footer.main-footer .footer-links ul li.first {
+    border-right: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
