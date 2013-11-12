@@ -18,6 +18,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/screen.css">
+    <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.css">
 
     <!-- endbuild -->
@@ -36,7 +37,7 @@
         <header id="main_header" class="main-header" role="banner">
             <div class="masthead row">
                 <div class="col-md-7">
-                    <img src="images/common/blank.gif" class="print-view-logo" alt="" data-ng-src="images/{{Service | lowercase}}/print-view-logo.png">
+                    <img src="images/common/blank.gif" class="print-view-logo" alt="" data-ng-src="images/booklogo.jpeg">
 
                     <h1 class="logo"><span class="ada-hide">ICharge</span> Payller</h1>
                 </div>
@@ -79,7 +80,17 @@
             </h2>
         </header>
 
-
+        <nav class="nav sider-bar" data-ng-controller="navSiderCtrl" data-ng-init="secondary=[]">
+            <ul class="primary">
+                <li data-ng-repeat="primarySider in siders" data-ng-switch="primarySider.secondary.length===0">
+                    <a data-ng-switch-when="true" data-ng-href="{{primarySider.href}}">{{primarySider.name}}</a>
+                    <a data-ng-switch-when="false" data-ng-click="secondary[$index] = !secondary[$index]" data-ng-href="javascript:void(0)">{{primarySider.name}}</a>
+                    <ul class="secondary" data-ng-switch-when="false" ui-toggle="secondary[$index]">
+                        <li data-ng-repeat="secondarySider in primarySider.secondary"><a data-ng-href="{{secondarySider.href}}">{{secondarySider.name}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
         <!-- Layout:Main Well:start -->
         <div id="mainWell">
             <div data-ng-view class="main-content"></div>
@@ -139,6 +150,7 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/controllers/navBarCtrl.js"></script>
 <script src="scripts/controllers/appMgrCtrl.js"></script>
+<script src="scripts/controllers/navSiderCtrl.js"></script>
 <script src="scripts/controllers/sectionHeaderCtrl.js"></script>
 <script src="scripts/app-bootstrap.js"></script>
 <script src="scripts/app-routes.js"></script>

@@ -7,6 +7,7 @@
 .outer-wrapper > .container {
     background: #f2f0ec;
     width: 992px;
+    padding: 0px;
 }
 
 .main-header {
@@ -18,6 +19,14 @@
     position: relative;
     overflow: hidden;
     background-color: red;
+    margin: 0px ;
+}
+
+.main-header .masthead .print-view-logo{
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 64px;
 }
 
 .main-header ul.header-links {
@@ -127,6 +136,7 @@ footer.main-footer {
     padding: 10px 0;
     font-size: 12px;
     clear: both;
+    margin: 0px;
 }
 
 
@@ -174,6 +184,23 @@ footer.main-footer .footer-links ul li.first {
 }
 
 
+nav.sider-bar ul.primary {
+    list-style: none;
+    width: 160px;
+}
+
+nav.sider-bar ul.primary li {
+    border-bottom: 1px solid #808080;
+}
+
+nav.sider-bar ul.secondary {
+    list-style: none;
+    padding-left: 10px;
+}
+
+nav.sider-bar ul.secondary li {
+    margin-left: 10px;
+}
 
 
 
