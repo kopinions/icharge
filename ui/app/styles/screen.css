@@ -1,0 +1,30 @@
+
+.outer-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.outer-wrapper > .container {
+    background: #f2f0ec;
+    width: 992px;
+}
+
+.main-header {
+    width: 100%;
+}
+
+.main-header .masthead {
+    height: 114px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-header ul.header-links {
+    list-style: none;
+    text-align: right;
+}
+
+.main-header ul.header-links li {
+    list-style: none;
+    display: inline;
+}

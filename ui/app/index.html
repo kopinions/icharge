@@ -17,7 +17,7 @@
 
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/bootstrap.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/screen.css">
     <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.css">
 
     <!-- endbuild -->
@@ -34,23 +34,22 @@
     <div class="container" data-ng-controller="appMgrCtrl">
 
         <header id="main_header" class="main-header" role="banner">
-            <div class="masthead row-fluid">
-                <div class="span7">
+            <div class="masthead row">
+                <div class="col-md-7">
                     <img src="images/common/blank.gif" class="print-view-logo" alt="" data-ng-src="images/{{Service | lowercase}}/print-view-logo.png">
 
-                    <h1 class="logo"><span class="ada-hide">Bank of America</span> Travel Center</h1>
+                    <h1 class="logo"><span class="ada-hide">ICharge</span> Payller</h1>
                 </div>
 
-                <div class="span5">
+                <div class="col-md-5">
                     <ul class="header-links">
-                        <li data-ng-hide="profile"><a class="last" href="javascript:void(0)">bankofamerica.com</a></li>
-                        <li data-ng-show="profile"><a href="#">Rewards Home</a></li>
-                        <li data-ng-show="profile"><a data-dismiss="modal" href="javascript:void(0)">Contact Us</a> </li>
-                        <li data-ng-show="profile"><a data-dismiss="modal" href="javascript:void(0)">Help</a></li>
-                        <li data-ng-show="profile"><a href="#sign_out" role="button" id="sign_out_link" data-toggle="modal" class="sign-out">Sign Out</a></li>
+                        <li><a href="#">Rewards Home</a></li>
+                        <li><a href="javascript:void(0)">Contact Us</a> </li>
+                        <li><a href="javascript:void(0)">Help</a></li>
+                        <li><a href="#sign_out" role="button" id="sign_out_link" data-toggle="modal" class="sign-out">Sign Out</a></li>
                     </ul>
 
-                    <div data-ng-show="profile" class="ng-cloak points-profile">
+                    <div data-ng-show="true" class="ng-cloak points-profile">
                         <div class="points-summary-placeholder">
                             <div>
                                 <span class="summary-label">Account Ending:</span>
@@ -68,7 +67,7 @@
                 </div>
             </div>
 
-            <nav data-ng-show="true">
+            <nav>
                 <ul data-ng-controller="navBarCtrl" class="main-nav">
                     <li><a href="#/" data-ng-class="{active: selectedTab=='Home'}">Travel Overview</a></li>
                     <li><a href="#/Flights" data-ng-class="{active: selectedTab=='Flights'}">Flights</a></li>
@@ -90,35 +89,14 @@
         <!-- Layout:Main Well:end -->
 
         <footer class="row-fluid main-footer" id="main_footer" role="contentinfo">
-            <div class="span12">
-                <div class="footer-links" data-ng-show="profile">
-                    <ul>
+            <div class="span12 footer-links">
+                <ul>
                         <li class="first"><h4>Secure Area</h4></li>
                         <li><a title="Contact us">Contact Us</a></li>
                         <li><a href="javascript:void(0)" class="help_footer">Help</a></li>
                         <li><a title="Privacy &amp; Security" href="javascript:void(0)" target="_blank">Privacy &amp; Security</a></li>
-                        <li class="last" data-ng-show="profile"><a href="javascript:void(0)" role="button" id="sign_out_footer_link" data-toggle="modal">Sign Out</a></li>
-                        <li class="last debug-info" data-ng-show="profile" aria-hidden="true">
-                            JSessionId: <span data-ng-bind="jsessionId"></span>
-                            <span data-ng-show="pnrNumber"> , PNR:
-                                <span data-ng-bind="pnrNumber" id="pnr"></span>
-                            </span>
-                        </li>
+                        <li class="last"><a href="javascript:void(0)" role="button" id="sign_out_footer_link" data-toggle="modal">Sign Out</a></li>
                     </ul>
-                </div>
-
-                <p>
-                    <a data-ng-hide="profile" title="Privacy &amp; Security"
-                      href="https://www.bankofamerica.com/privacy/index.jsp" target="_blank">Privacy &amp; Security</a>
-                </p>
-
-
-                <p>test<a class="equal-housing-icon" title="Opens in new window"
-                          onclick="javascript:window.open(this.href,'newwin','width=640,height=371,scrollbars=yes,resizable=yes,left=35,top=161'); return false;"
-                          href="http://www.bankofamerica.com/help/equalhousing_popup.cfm"
-                          target="_blank">Equal Housing Lender</a><br/>
-                    <span class="copyright">&copy; testtest</span>
-                </p>
             </div>
         </footer>
         <!-- Sign out -->
